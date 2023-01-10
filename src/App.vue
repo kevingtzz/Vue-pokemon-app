@@ -1,30 +1,32 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <Navigation />
+  <router-view />
 </template>
 
+<script setup>
+import Navigation from '@/components/Navigation.vue';
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import '../node_modules/bulma/bulma.sass';
+
+* {
+  box-sizing: border-box;
 }
 
-nav {
-  padding: 30px;
+body {
+  padding-top: 50px;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+.mt-10 {
+  margin-top: 10px;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.mt-30 {
+  margin-top: 30px;
+}
+
+.mt-50 {
+  margin-top: 50px;
 }
 </style>
