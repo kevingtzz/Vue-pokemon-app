@@ -39,11 +39,13 @@
           <PokemonProperty title="Moves">
             <span>{{ new Intl.ListFormat('en').format(this.getMoves()) }}</span>
           </PokemonProperty>
-          <div class="button-container" v-if="(!!$store.getters.getStoreFavorites[pokemon.id] && this.isFavorite)">
-            <button class="button is-primary mt-30" @click="removeFromFavoritesHandler">Remove from favorites</button>
-          </div>
-          <div class="button-container" v-else>
-            <button class="button is-primary mt-30" @click="addToFavoritesHandler">Add to favorites</button>
+          <div class="buttons-container" v-show="$store.state.userAuth">
+            <div class="button-container" v-if="(!!$store.getters.getStoreFavorites[pokemon.id] && this.isFavorite)">
+              <button class="button is-primary mt-30" @click="removeFromFavoritesHandler">Remove from favorites</button>
+            </div>
+            <div class="button-container" v-else>
+              <button class="button is-primary mt-30" @click="addToFavoritesHandler">Add to favorites</button>
+            </div>
           </div>
         </div>
       </div>
